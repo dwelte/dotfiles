@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-Just a place for some dotfiles
+Some dot files stuff.  No fancy install script.  Just some stuff.

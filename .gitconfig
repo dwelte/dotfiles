@@ -1,0 +1,27 @@
+[user]
+	name = David Welte
+	email = dwelte@climate.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	pager = less -FRSX
+	excludesfile = /Users/dwelte/.gitignore
+[remote "origin"]
+	push = HEAD
+[branch]
+	autosetuprebase = always
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	staged = diff --cached
+	nb = "!f() { git checkout -t -b $1 origin/master; }; f"
+[push]
+	default = upstream
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
