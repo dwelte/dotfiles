@@ -8,6 +8,7 @@
 [core]
 	pager = less -FRSX
 	excludesfile = /Users/dwelte/.gitignore
+	editor = vim
 [remote "origin"]
 	push = HEAD
 [branch]
@@ -19,6 +20,9 @@
 	br = branch
 	staged = diff --cached
 	nb = "!f() { git checkout -t -b $1 origin/master; }; f"
+	sb = "!f() { [ \"$1\" != \"\" ] || echo 'Must include branch name'; [ \"$1\" != \"\" ] || exit 1; git fetch; git checkout --no-track -b $1 origin/master; git push -u origin $1; }; f"
+	cb = "!f() { [ \"$1\" != \"\" ] || echo 'Must include branch name'; [ \"$1\" != \"\" ] || exit 1; [ \"$2\" != \"\" ] || echo 'Must include source branch name'; [ \"$2\" != \"\" ] || exit 1; git fetch; git checkout --no-track -b $1 $2; git push -u origin $1; }; f"
+	files = diff-tree --no-commit-id --name-status -r HEAD
 [push]
 	default = upstream
 [pager]
